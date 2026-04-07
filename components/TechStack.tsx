@@ -22,7 +22,7 @@ const allSkills = [
 ];
 
 function iconUrl(slug: string) {
-  return `https://cdn.simpleicons.org/${slug}/ffffff`;
+  return `https://cdn.simpleicons.org/${slug}`;
 }
 
 export default function TechStack() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -16,6 +16,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +42,19 @@ export default function Navbar() {
 
   return (
     <>
+      <motion.div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "3px",
+          transformOrigin: "0%",
+          scaleX,
+          background: "linear-gradient(90deg, var(--accent-cyan), var(--accent-violet))",
+          zIndex: 1000,
+        }}
+      />
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
