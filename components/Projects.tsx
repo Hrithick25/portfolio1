@@ -52,13 +52,13 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Cervical Cancer Prediction",
-    subtitle: "ML Healthcare",
+    title: "Sentinel LLM Security",
+    subtitle: "Enterprise LLM Security",
     description:
-      "A machine learning system for early cervical cancer risk prediction using clinical data. Combines feature engineering, ensemble models, and interpretable AI to assist healthcare professionals in early diagnosis.",
-    tags: ["Python", "Scikit-learn", "XGBoost", "Pandas", "Data Analysis"],
+      "An enterprise-grade LLM security middleware that intercepts API traffic through a concurrent 19-agent mesh. Dynamically neutralizes prompt injections, data leakage, and jailbreaks using NLP models and FAISS.",
+    tags: ["Python", "React", "FastAPI", "Kafka", "FAISS"],
     color: "#00ffaa",
-    link: "https://github.com/Hrithick25?tab=repositories",
+    link: "https://sentinel-frontend-fouz.vercel.app/",
     icon: "⬡",
   },
 ];
